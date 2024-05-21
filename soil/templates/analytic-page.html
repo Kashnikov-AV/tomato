@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Analytic page{% endblock title %}
+
+{% block content %}
+    {% include 'components/header.html' %}
+    <div class="text-center mt-3 mb-3">
+        <div class="input-group d-flex justify-content-center">
+            <div class="custom-file">
+                <label for="formFileMultiple" class="form-label">Загрузить данные</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple />
+            </div>
+          </div>
+    </div>
+    <div class="container-xxl">
+        <div class="row gap-0 row-gap-3">
+            <div class="col-lg-6">
+                <div class="card chart-container">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+  
+            <div class="col-lg-6">
+                <div class="card chart-container">
+                    <canvas id="chart2"></canvas>
+                </div>
+            </div>
+    
+            <div class="col-lg-6">
+                <div class="card chart-container">
+                    <canvas id="chart3"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'components/footer.html' %}
+{% endblock content %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <!-- first chart -->
+    <script>
+        const ctx = document.getElementById("chart").getContext('2d');
+        const myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ["Sunday", "Monday", "Tuesday",
+            "Wednesday", "Thursday", "Friday", "Saturday"],
+            datasets: [{
+              label: 'Last week',
+              backgroundColor: 'rgba(161, 198, 247, 1)',
+              borderColor: 'rgb(47, 128, 237)',
+              data: [3000, 4000, 2000, 5000, 8000, 9000, 2000],
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                }
+              }]
+            }
+          },
+        });
+    </script>
+
+    <script>
+        const ctx2 = document.getElementById("chart2").getContext('2d');
+        const myChart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ["rice", "yam", "tomato", "potato",
+            "beans", "maize", "oil"],
+            datasets: [{
+            label: 'food Items',
+            backgroundColor: 'rgba(161, 198, 247, 1)',
+            borderColor: 'rgb(47, 128, 237)',
+            data: [300, 400, 200, 500, 800, 900, 200],
+            }]
+        },
+        options: {
+            scales: {
+            yAxes: [{
+                ticks: {
+                beginAtZero: true,
+                }
+            }]
+            }
+        },
+        });
+    </script>
+
+    <script>
+        const ctx3 = document.getElementById("chart3").getContext('2d');
+        const myChart3 = new Chart(ctx3, {
+        type: 'pie',
+        data: {
+            labels: ["rice", "yam", "tomato", "potato",
+            "beans", "maize", "oil"],
+            datasets: [{
+            label: 'food Items',
+            backgroundColor: 'rgba(161, 198, 247, 1)',
+            borderColor: 'rgb(47, 128, 237)',
+            data: [30, 40, 20, 50, 80, 90, 20],
+            }]
+        },
+        });
+    </script>
+{% endblock scripts %}

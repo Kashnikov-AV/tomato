@@ -1,0 +1,29 @@
+// @import "_variables.scss";
+// @import "bootstrap.scss";
+// @import "_bootswatch.scss";
+
+.back-img{
+    background:no-repeat center/cover url("../img/landing-pic.jpg"); 
+    background-color:rgb(95, 95, 95); 
+    background-blend-mode:overlay;
+}
+
+.footer-img-back{
+    min-height: 20vh; 
+    background-attachment: fixed; 
+    background-size:cover; 
+    background-position: center center;
+    background-color:#eee;
+    background-image: url("../img/cucumber.jpg");
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 360px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.to-grey{
+    filter: grayscale(100%);
+}

@@ -1,0 +1,393 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Цифровое овощеводство{% endblock title %}
+
+{% block content %}
+    {% include 'components/header.html' %}
+    <section class="">
+	<div class="back-img d-flex min-vh-60 py-5 py-lg-7" lc-helper="background">
+		<div class="align-self-center text-light col-md-8 offset-md-2 text-center text-md-start">
+			<div class="lc-block mb-4">
+				<div editable="rich">
+					<p class="fw-bold text-white h4">ООО "Кафедра цифрового овощеводства"</p>
+				</div>
+			</div>
+			<div class="lc-block mb-4 mb-lg-6 col-xxl-8">
+				<div editable="rich">
+					<h1 class="display-1 text-white fw-bold">Аналитика больших данных в овощеводстве защищенного грунта</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+    </section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6 text-center text-black border" style="padding:60px">
+				<div class="lc-block">
+					<div editable="rich">
+						<p class="display-4">2023</p>
+					</div>
+				</div>
+				<div class="lc-block pb-1">
+					<hr class="w-25 bg-light">
+				</div>
+				<div class="lc-block">
+					<div editable="rich">
+						<p>Год основания</p>
+					</div>
+				</div>
+				<!-- /lc-block -->
+			</div>
+			<div class="col-lg-3 col-md-6 text-center text-body" style="padding:60px">
+				<div class="lc-block ">
+					<div editable="rich">
+						<p class="display-4">20+
+						</p>
+					</div>
+				</div>
+				<div class="lc-block pb-1">
+					<hr class="w-25 bg-light">
+				</div>
+				<div class="lc-block">
+					<div editable="rich">
+						<p>Индустриальных партнеров</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 text-center text-body border" style="padding:60px">
+				<div class="lc-block ">
+					<div editable="rich">
+						<p class="display-4">15</p>
+					</div>
+				</div>
+				<div class="lc-block pb-1">
+					<hr class="w-25 bg-light">
+				</div>
+				<div class="lc-block">
+					<div editable="rich">
+						<p>Стартап-проектов</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 text-center text-black-50" style="padding:60px">
+				<div class="lc-block ">
+					<div editable="rich">
+						<p class="display-4">10</p>
+					</div>
+				</div>
+				<div class="lc-block pb-1">
+					<hr class="w-25 bg-light">
+				</div>
+				<div class="lc-block">
+					<div editable="rich">
+						<p>Членов команды</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="container mb-3 mt-3">
+		<div class="row">
+			<div class="col-md-12 align-self-center mb-5 mb-lg-0 py-4 py-lg-0">
+
+				<div class="lc-block mb-4">
+					<div editable="rich">
+						<h1 class="display-4 fw-bold">Анализируй данные — и расти!</h1>
+					</div>
+				</div>
+				<div class="lc-block mb-4">
+					<div editable="rich">
+						<p>Визуализируем данные, решаем задачи прогнозирования и оптимизации затрат</p>
+					</div>
+				</div><!-- /lc-block -->
+			</div><!-- /col -->
+		</div>
+		<div class="row">
+			<div class="lc-block text-center mb-3">
+				<a class="btn btn-lg btn-warning" href="{% url 'analytic:index' %}" role="button">Начать анализировать	</a>
+			</div><!-- /lc-block -->
+		</div>
+	</div>
+</section>
+
+<section class="py-6 bg-light">
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-md-12 text-center">
+				<div class="lc-block mb-4">
+					<h2 editable="inline" class="display-2 mb-0"><b class="fw-bold">Наша команда</b></h2>
+					<p editable="inline" class="">Команда проекта состоит из опытных разработчиков, преподавателей и ученых из Тимирязевки</p>
+				</div><!-- /lc-block -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 py-4">
+				<div class="lc-block">
+					<img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/nevzorov.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Александр Невзоров</strong></h5>
+					</div>
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Генеральный директор, разработчик</small>
+					<div editable="rich">
+						<p>Администрирование проекта, внешние связи и сопровождение проекта, разработка моделей и алгоритмов машинного обучения.</p>
+					</div>
+				</div>
+
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79096580658" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-6 py-4">
+				<div class="lc-block"><img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/titov.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Артем Титов</strong></h5>
+					</div>
+
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Data scientist, ML-инженер</small>
+
+					<div editable="rich">
+						<p>Предобработка, исследование, подготовка и визуализация данных,  построение и выбор наиболее подходящей модели искусственного интеллекта.</p>
+					</div>
+				</div>
+
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79999614025" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 py-4">
+				<div class="lc-block"><img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/bykov.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Денис Быков</strong></h5>
+					</div>
+
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Разработчик нейросетей</small>
+
+					<div editable="rich">
+						<p>Проектирование, внедрение и обслуживание искусственных нейронных сетей для создания модели прогнозирования урожайности овощных культур, выращиваемых в защищенном грунте.</p>
+					</div>
+				</div>
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79261680991" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-6 py-4">
+				<div class="lc-block"><img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/kashnikov.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Александр Кашников</strong></h5>
+					</div>
+
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Веб-разработчик</small>
+
+					<div editable="rich">
+						<p>Бэкенд- и фронтенд разработчика на языке программирования Python, создание лэндинга проекта.</p>
+					</div>
+				</div>
+
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79060432958" target="_blank"> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 py-4">
+				<div class="lc-block"><img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/fedorov.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Даниил Федоров</strong></h5>
+					</div>
+
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Агроном консультант по защищенному грунту, преподаватель кафедры овощеводства РГАУ-МСХА имени К.А. Тимирязева</small>
+
+					<div editable="rich">
+						<p>Консультирование по различным технологическим аспектам овощеводства защищенного грунта, коммуникация с индустриальными партнерами.</p>
+					</div>
+				</div>
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79167412771" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-6 py-4">
+				<div class="lc-block"><img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/demichev.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Вадим Демичев</strong></h5>
+					</div>
+
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Научный руководитель, Project-менеджер</small>
+
+					<div editable="rich">
+						<p>Научное руководство проекта, планирование, координация, организация и контроль выполнения проекта.</p>
+					</div>
+				</div>
+
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79268262523" target="_blank"> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 py-4">
+				<div class="lc-block"><img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/hramov.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Дмитрий Храмов</strong></h5>
+					</div>
+
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Разработчик, системный аналитик</small>
+
+					<div editable="rich">
+						<p>Разработка технического задания и дорожной карты проекта.</p>
+					</div>
+				</div>
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79085520299" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-6 py-4">
+				<div class="lc-block"><img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/rebechkaya.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Ксения Ребецкая</strong></h5>
+					</div>
+
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Data scientist </small>
+
+					<div editable="rich">
+						<p>Разработка инспирированных природой алгоритмов на языке Python для задач оптимизации производства в овощеводстве защищенного грунта.</p>
+					</div>
+				</div>
+
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79282087511" target="_blank"> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 py-4">
+				<div class="lc-block"><img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/vodyanichkiy.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Георгий Водяницкий</strong></h5>
+					</div>
+
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Data scientist</small>
+
+					<div editable="rich">
+						<p>Обучение, тестирование и сопровождение моделей инспирированных природой алгоритмов.</p>
+					</div>
+				</div>
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79883187033" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-6 py-4">
+				<div class="lc-block"><img alt="" class="rounded-circle float-start me-4 to-grey" src="{% static 'img/team/tokarev.jpg' %}" style="width:10vh;" loading="lazy">
+					<div editable="rich">
+						<h5><strong>Виктор Токарев</strong></h5>
+					</div>
+
+					<small editable="inline" class="text-secondary" style="letter-spacing:1px">Разработчик</small>
+
+					<div editable="rich">
+						<p>Визуализация данных, разработка моделей машинного обучения на языке программирования R.</p>
+					</div>
+				</div>
+
+				<div class="lc-block float-end ms-3 py-4">
+					<a class="text-dark text-decoration-none" href="https://t.me/+79912337338" target="_blank"> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<path d="M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5c8.563 0 15.5-6.938 15.5-15.5s-6.938-15.5-15.5-15.5zM23.613 11.119l-2.544 11.988c-0.188 0.85-0.694 1.056-1.4 0.656l-3.875-2.856-1.869 1.8c-0.206 0.206-0.381 0.381-0.781 0.381l0.275-3.944 7.181-6.488c0.313-0.275-0.069-0.431-0.482-0.156l-8.875 5.587-3.825-1.194c-0.831-0.262-0.85-0.831 0.175-1.231l14.944-5.763c0.694-0.25 1.3 0.169 1.075 1.219z"/>
+						  </svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="py-6 bg-body">
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-md-12 text-center">
+				<div class="lc-block mb-4">
+					<h2 editable="inline" class="display-2 mb-0"><b class="fw-bold">Наши партнеры</b></h2>
+				</div><!-- /lc-block -->
+			</div>
+		</div>
+		<div class="row mb-4">
+			<div class="col-md-6 text-center">
+				<div class="lc-block mb-4">
+					<a class="text-dark text-decoration-none" href="https://www.timacad.ru/" target="_blank"> 
+						<img alt="" class="" src="{% static 'img/partners/timacad.svg' %}" style="height:20vh;" loading="lazy">
+					</a>
+				</div><!-- /lc-block -->
+			</div>
+			<div class="col-md-6 text-center">
+				<div class="lc-block mb-4">
+					<a class="text-dark text-decoration-none" href="https://fasie.ru/" target="_blank"> 
+						<img alt="" class="" src="{% static 'img/partners/fsi_logo.png' %}" style="height:20vh;" loading="lazy">
+					</a>
+				</div><!-- /lc-block -->
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="footer-img-back d-flex text-center" lc-helper="background">
+		<div class="lc-block  my-3 align-self-center w-100 py-5">
+			<div editable="rich">
+				<h2 class="display-4 text-white">Откройте новые возможности с помощью аналитики больших данных</h2>
+				<p><br></p>
+			</div>
+			<a class="btn btn-lg btn-warning" href="#" role="button">Контакты</a>
+		</div>
+	</div>
+</section>
+    {% include 'components/footer.html' %}
+{% endblock content %}
+{% block scripts %}
+<script>
+	const year = new Date().getFullYear();
+	copy = document.getElementById("copyright");
+	copy.innerHTML = "&copy;"+ " " + year + " " + "ООО «Кафедра цифрового овощеводства»";
+</script>
+{% endblock scripts %}

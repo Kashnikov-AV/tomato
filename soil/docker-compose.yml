@@ -1,0 +1,71 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres:15-alpine
+    container_name: database
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - pgconf:/etc/postgresql
+      - pglog:/var/log/postgresqlcls
+    command: -p 5432
+    expose:
+      - 5432
+    env_file:
+      - .env-prod
+
+  web:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    command: >
+      sh -c "sleep 5 && \
+             python manage.py migrate && \
+             python manage.py collectstatic --no-input && \
+             daphne -p 8000 -b 0.0.0.0 grass.asgi:application"
+    volumes:
+      - /app:/grass/
+      - static_volume:/app/static
+      - media_volume:/app/media
+    depends_on:
+      - database
+#      - redis
+    env_file:
+      - .env
+  nginx:
+    build: ./nginx
+    restart: unless-stopped
+    volumes:
+      - static_volume:/home/app/web/staticfiles
+      - media_volume:/home/app/web/media
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/www/certbot:/var/www/certbot
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - web:web
+    depends_on:
+      - web
+    networks:
+      - djangonetwork
+
+#  redis:
+#    image: redis:alpine
+#    container_name: redis
+
+
+
+volumes:
+  pgdata:
+    driver: local
+  pgconf:
+    driver: local
+  pglog:
+    driver: local
+  static_volume:
+    driver: local
+  media_volume:
+    driver: local
