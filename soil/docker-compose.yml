@@ -24,10 +24,10 @@ services:
       sh -c "sleep 5 && \
              python manage.py migrate && \
              python manage.py collectstatic --no-input && \
-             gunicorn — bind 0.0.0.0:8000 soil.wsgi"
+             gunicorn --bind 0.0.0.0:8000 soil.wsgi:application"
     volumes:
       - /app:/soil/
-      - static_volume:/app/static
+      - static_volume:/app/staticfiles
       - media_volume:/app/media
     depends_on:
       - db
