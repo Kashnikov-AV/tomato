@@ -34,6 +34,10 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
+CSRF_TRUSTED_ORIGINS = ["https://diveg.ru",
+                        "https://www.diveg.ru",
+                        ]
+
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split()
 
 
