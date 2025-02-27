@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 env = environ.Env(
-    DEBUG=(bool, False)
+    DEBUG=(bool, True)
 )
 
 CSRF_TRUSTED_ORIGINS = ["https://www.diveg.ru",
@@ -34,7 +34,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ["www.diveg.ru", "diveg.ru",]
+ALLOWED_HOSTS = ["www.diveg.ru", "diveg.ru", "*"]
 
 
 # Application definition
@@ -46,16 +46,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # installed apps
     'crispy_forms',
     'crispy_bootstrap5',
-    'debug_toolbar',
-    # local apps
+    'django_extensions',
+    'django_htmx',
     'index_app',
     'analytic_app',
     'forecast_app',
     'signup_app',
     'optimization_app',
+    'phenology_app',
 ]
 
 MIDDLEWARE = [
@@ -64,9 +64,9 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_htmx.middleware.HtmxMiddleware',
 ]
 
 ROOT_URLCONF = 'soil.urls'

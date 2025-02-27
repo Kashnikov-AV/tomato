@@ -20,11 +20,11 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("__debug__/", include("debug_toolbar.urls")),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('signup_app.urls')),
-    path('', TemplateView.as_view(template_name="index.html"), name="main"),
+    path('', TemplateView.as_view(template_name="index.html"), name="index-page"),
     path('analytic/', include("analytic_app.urls", namespace="analytic")),
     path('forecast/', include("forecast_app.urls", namespace="forecast")),
     path('optimization/', include("optimization_app.urls", namespace="optimization")),
+    path('phenology/', include("phenology_app.urls", namespace="phenology")),
 ]
