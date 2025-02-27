@@ -72,8 +72,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'soil.urls'
 
 # URL redirecting after a successful authentication
-LOGIN_REDIRECT_URL = 'main'
-LOGOUT_REDIRECT_URL = 'main'
+LOGIN_REDIRECT_URL = 'index-page'
+LOGOUT_REDIRECT_URL = 'index-page'
 LOGIN_URL = 'login'
 
 AUTH_USER_MODEL = "signup_app.CustomUser"

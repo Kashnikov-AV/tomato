@@ -27,4 +27,5 @@ urlpatterns = [
     path('forecast/', include("forecast_app.urls", namespace="forecast")),
     path('optimization/', include("optimization_app.urls", namespace="optimization")),
     path('phenology/', include("phenology_app.urls", namespace="phenology")),
+    path('general/', include("general_forms_app.urls", namespace="general")),
 ]
