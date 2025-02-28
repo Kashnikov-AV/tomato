@@ -4,6 +4,7 @@ Django==5.0.2
 django-crispy-forms==2.1
 django-environ==0.11.2
 django-extensions==3.2.3
+django-grappelli==4.0.1
 django-htmx==1.22.0
 environ==1.0
 gunicorn==22.0.0
@@ -14,4 +15,3 @@ psycopg2-binary==2.9.9
 sqlparse==0.4.4
 tornado==6.4.2
 tzdata==2024.1
-

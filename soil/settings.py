@@ -40,6 +40,7 @@ ALLOWED_HOSTS = ["www.diveg.ru", "diveg.ru", "*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
