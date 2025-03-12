@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Diveg Фенология растений{% endblock title %}
+{% load crispy_forms_tags %}
+{% load tz %}
+
+{% block content %}
+{% include 'components/header.html' %}
+{% get_current_timezone as TIME_ZONE %}
+<div class="content-sm text-center bg-body">
+    <h4>Таблица результатов</h4>
+    <div class="row g-3 m-3">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">growth_per_week</th>
+                <th scope="col">stem_diameter</th>
+                <th scope="col">leaf_length</th>
+                <th scope="col">leaf_width</th>
+                <th scope="col">number_of_leaves_per_stem</th>
+                <th scope="col">internode_length</th>
+                <th scope="col">Дата</th>
+                <th scope="col">Растение</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for obj in object_list %}
+            <tr>
+                <th scope="row">{{ obj.pk }}</th>
+                <td>{{ obj.growth_per_week }}</td>
+                <td>{{ obj.stem_diameter }}</td>
+                <td>{{ obj.leaf_length }}</td>
+                <td>{{ obj.leaf_width }}</td>
+                <td>{{ obj.number_of_leaves_per_stem }}</td>
+                <td>{{ obj.internode_length }}</td>
+                <td>{% localtime on %}{{ obj.date }}{% endlocaltime %}</td>
+                <td>{{ obj.plant }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="col-12">
+            <a href="{% url 'phenology:blocks-list' pk=pk  %}" class="btn btn-secondary">Назад</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Diveg Фенология растений{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% include 'components/header.html' %}
+<div class="container col-12 text-center m-2">
+    <h4>Тк: {{ tk }}</h4>
+    <h4>блок № {{ block_ }}</h4>
+    {% if object_list %}
+    <h4>Выберите растение</h4>
+    <div class="row g-3 m-3">
+        {% for obj in object_list %}
+        <div class="col-12 mb-3">
+            <a href="{{ obj.get_record_create_url }}" class="btn btn-primary">Растение №{{ obj.key }}</a>
+        </div>
+        {% endfor %}
+        <div class="col-12 mb-3">
+            <a href="{% url 'phenology:blocks-list' pk=pk  %}" class="btn btn-secondary">Назад</a>
+        </div>
+    </div>
+    {% else %}
+    <h4>Выберите число наблюдаемых растений</h4>
+    <form method="post" action="{% url 'phenology:create-plants' block_ tk.pk %}" class="col-4 g-3 m-3 d-flex flex-column align-items-center justify-content-center">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="col-12 mb-3">
+            <button type="submit" class="btn btn-success">Добавить растения</button>
+        </div>
+        <div class="col-12">
+            <a href="{% url 'phenology:blocks-list' pk=pk  %}" class="btn btn-primary">Назад</a>
+        </div>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

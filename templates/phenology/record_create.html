@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Diveg Фенология растений{% endblock title %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="content-sm d-flex flex-column align-items-center justify-content-center text-center bg-body p-3">
+    <h4>Тк: {{ tk }}</h4>
+    <h4>блок № {{ block_ }}</h4>
+    <h4>растение № {{ plant }}</h4>
+    <form method="post" class="col-4 g-3 m-3 d-flex flex-column align-items-center justify-content-center">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="col-12 mb-3">
+            <button type="submit" class="btn btn-success">Добавить запись</button>
+        </div>
+        <div class="col-12">
+            <a href="{% url 'phenology:plants-list' block=block_ pk=pk  %}" class="btn btn-secondary">Назад</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

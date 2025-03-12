@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Diveg Фенология растений{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% include 'components/header.html' %}
+<div class="container col-12 text-center m-2">
+    <h4>Тк: {{ tk }}</h4>
+    <h4>Выберите блок</h4>
+    {% for obj in object_list %}
+    <div class="row">
+        <div class="col">
+            <a href="{{ obj.get_plants_list_url }}" class="btn btn-primary">Блок №{{ obj.key }}</a>
+        </div>
+        <div class="col">
+            <a href="{{ obj.get_records_list_url }}" class="btn btn-success">Результаты измерений</a>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="col-12 mb-3">
+        <a href="{% url 'phenology:index' %}" class="btn btn-secondary">Назад</a>
+    </div>
+</div>
+{% endblock %}
