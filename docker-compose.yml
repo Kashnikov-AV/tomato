@@ -1,20 +1,6 @@
 version: '3.3'
 
 services:
-  db:
-    image: postgres:15-alpine
-    container_name: db
-    ports:
-      - 5432:5432
-    restart: unless-stopped
-    networks:
-        - djangonetwork
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-      - pgconf:/etc/postgresql
-      - pglog:/var/log/postgresqlcls
-    env_file:
-      - .env
   web:
     build:
       context: .
@@ -29,8 +15,6 @@ services:
       - /app:/soil/
       - static_volume:/app/staticfiles
       - media_volume:/app/media
-    depends_on:
-      - db
     env_file:
       - .env
     networks:
@@ -58,8 +42,5 @@ networks:
         driver: bridge
 
 volumes:
-  pgdata:
-  pgconf:
-  pglog:
   static_volume:
   media_volume:
