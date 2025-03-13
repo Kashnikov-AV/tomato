@@ -2,6 +2,7 @@ version: '3.3'
 
 services:
   web:
+    container_name: web
     build:
       context: .
     ports:
@@ -20,6 +21,7 @@ services:
     networks:
       - djangonetwork
   nginx:
+    container_name: nginx
     build: ./nginx
     restart: unless-stopped
     volumes:
@@ -29,7 +31,7 @@ services:
       - /var/www/certbot:/var/www/certbot
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     ports:
-      - 80:80
+      - 81:80
       - 443:443
     links:
       - web:web
