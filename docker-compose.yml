@@ -12,7 +12,7 @@ services:
              python manage.py collectstatic --no-input && \
              gunicorn --bind 0.0.0.0:8000 soil.wsgi:application"
     volumes:
-      - /app:/soil/
+      - /app:/tomato/
       - static_volume:/app/staticfiles
       - media_volume:/app/media
     env_file:
