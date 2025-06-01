@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
@@ -29,4 +31,5 @@ urlpatterns = [
     path('optimization/', include("optimization_app.urls", namespace="optimization")),
     path('phenology/', include("phenology_app.urls", namespace="phenology")),
     path('general/', include("general_forms_app.urls", namespace="general")),
+    path('about-us/', TemplateView.as_view(template_name="about-us.html"), name="aboutus-page"),
 ]
